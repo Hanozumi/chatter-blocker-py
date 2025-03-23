@@ -6,6 +6,7 @@
 '''
 
 import csv
+from libevdev import evbit
 
 CONFIG_HEADER = '# Default config for chatter-blocker-py\n# Copyright (c) 2025 Hanozumi\n\n'
 
@@ -29,7 +30,7 @@ class Config:
 				match filtered[0]:
 					case 'device': self.device = filtered[1]
 					case 'threshold': self.threshold = int(filtered[1])
-					case 'exclude': self.exclude_keys = [e.strip() for e in filtered[1].split(',')] if len(filtered) > 1 else []
+					case 'exclude': self.exclude_keys = [evbit('EV_KEY', int(e.strip())) for e in filtered[1].split(',')] if len(filtered) > 1 else []
 					case _: print(f'Unknown configuration option "{filtered[0]}"')
 
 		if self.device == '': raise ValueError(f'A device needs to be specified in {path}.')
