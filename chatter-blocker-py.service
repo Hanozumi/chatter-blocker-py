@@ -1,0 +1,11 @@
+[Unit]
+Description=Start the chatter-blocker-py process
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=<path/to/executable>
+
+[Install]
+WantedBy=multi-user.target
