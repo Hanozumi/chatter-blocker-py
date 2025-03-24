@@ -2,6 +2,8 @@
 	chatter-blocker.py
 	Python implementation of a chatter blocker (e.g. for mechanical keyboard chatter). 
 
+	Project inspired by https://github.com/finkrer/KeyboardChatteringFix-Linux
+
 	Copyright (c) 2025 Hanozumi
 '''
 
