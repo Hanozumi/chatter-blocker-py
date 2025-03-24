@@ -1,0 +1,7 @@
+altgraph==0.17.4
+libevdev==0.11
+packaging==24.2
+pick==2.4.0
+pyinstaller==6.12.0
+pyinstaller-hooks-contrib==2025.2
+setuptools==77.0.3
