@@ -3,6 +3,5 @@
 	.venv/bin/pip install -r requirements.txt
 	.venv/bin/pyinstaller chatterblocker.py
 
-clean:
 	rm -rf __pycache__
 	rm -rf .venv
