@@ -8,6 +8,7 @@
 '''
 
 import os
+import sys
 import libevdev
 from time import sleep
 from pick import pick
@@ -29,6 +30,8 @@ if not os.path.isfile(config_path):
 		'exclude': ''
 	}
 	config.write(config_path, config_data)
+	print(f'Wrote config to {config_path}.\n:: Exiting...')
+	sys.exit(0)
 
 config.read(config_path)
 device_path = os.path.realpath(os.path.join('/dev/input/by-id/', config.device))
