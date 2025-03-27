@@ -14,5 +14,4 @@ service: dist/chatterblocker/chatterblocker
 	sudo sed -i "s@<path/to/executable>@$(realpath dist/chatterblocker/chatterblocker)@g" /usr/lib/systemd/system/chatter-blocker-py.service
 	sudo systemctl enable --now chatter-blocker-py.service
 
-rebuild:
-	clean all
+rebuild: clean all
