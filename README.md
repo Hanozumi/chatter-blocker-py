@@ -3,6 +3,8 @@
 
 **Python implementation of a chatter blocker (e.g. for mechanical keyboard chatter) for Linux.**
 
+This project is inspired by [Keyboard Chattering Fix for Linux](https://github.com/finkrer/KeyboardChatteringFix-Linux).
+
 ## Installation
 
 Either download or clone this repository. After that, run the command below to automatically create a virtual Python environment and download the required packages.
