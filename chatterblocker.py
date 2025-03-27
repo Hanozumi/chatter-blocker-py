@@ -10,6 +10,7 @@
 import os
 import sys
 import libevdev
+from systemd import journal
 from time import sleep
 from pick import pick
 from chatterblocker.config import Config
@@ -38,9 +39,8 @@ device_path = os.path.realpath(os.path.join('/dev/input/by-id/', config.device))
 
 sleep(1)
 
-print(f':: Listening to {config.device} @ {config.threshold}ms\r')
-print(':: Excluded Keys:\r')
-print(config.exclude_keys)
+journal.send(f':: Listening to {config.device} @ {config.threshold}ms\r')
+journal.send(':: Excluded Keys: ' + config.exclude_keys.__str__() + '\r')
 
 with open(device_path, 'rb') as fd:
 	device = libevdev.Device(fd)
